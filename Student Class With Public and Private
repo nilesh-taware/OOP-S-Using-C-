@@ -1,0 +1,46 @@
+#include<iostream>
+using namespace std;
+class Student
+{
+private:
+    int rono;
+    string name;
+    int year_passing;
+
+public:
+    
+    void input_details();
+    
+    void display_details();
+    
+};
+
+void Student::input_details()
+{
+    cout<<"Please enter student details:";
+    cout<<"Student Roll:";
+    cin>>rono;
+    cout<<"Student Name:";
+    cin>>name;
+    cout<<"YOP:";
+    cin>>year_passing;
+    
+}
+void Student::display_details()
+{
+    cout<<"----Student Details----"<<endl;
+    cout<<"Student Name:"<<" "<<name<<endl;
+    cout<<"Student Rno:"<<"  "<<rono<<endl;
+    cout<<"Year Of Pass:"<<" "<<year_passing<<endl;
+    
+}
+
+
+int main()
+{
+    Student stud1;
+    stud1.input_details();
+    stud1.display_details();
+    
+    
+}
