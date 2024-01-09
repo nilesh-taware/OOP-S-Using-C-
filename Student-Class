@@ -1,0 +1,47 @@
+//
+//  main.cpp
+//  USERFUN
+//
+//  Created by Nilesh Taware on 25/12/23.
+//
+#include<iostream>
+using namespace std;
+class Student
+{
+    int roll_no;
+    string stud_name;
+    double marks;
+public:
+    void input_details()
+    {
+        cout<<"Enter roll no:"<<endl;
+        cin>>roll_no;
+        cout<<"Enter name:";
+        cin>>stud_name;
+        cout<<"Enter marks:";
+        cin>>marks;
+        
+        
+    }
+    void display_details()
+    {
+        cout<<"---Student details---"<<endl;
+        cout<<"Roll No:"<<" "<<roll_no<<endl;
+        cout<<"Name   :"<<" "<<stud_name<<endl;
+        cout<<"Marks  :"<<" "<<marks<<endl;
+        
+    }
+    
+};
+int main()
+{
+    Student stud1;
+    stud1.input_details();
+    stud1.display_details();
+    return 0;
+    
+}
+
+
+
+
