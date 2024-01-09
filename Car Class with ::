@@ -1,0 +1,57 @@
+//
+//  main.cpp
+//  USERFUN
+//
+//  Created by Nilesh Taware on 25/12/23.
+//
+#include<iostream>
+using namespace std;
+class Car
+{
+
+    string car_model;
+    string car_name;
+    string car_color;
+    int car_mfg;
+public:
+    void input_car_details();
+    void display_car_details();
+    
+};
+
+void Car::input_car_details()
+{
+    cout<<"Please enter car details:"<<endl;
+    cout<<"Car Model:"<<endl;
+    cin>>car_model;
+    cout<<"Car Name:"<<endl;
+    cin>>car_name;
+    cout<<"Car Colour"<<endl;
+    cin>>car_color;
+    cout<<"Car Mfg Year:"<<endl;
+    cin>>car_mfg;
+}
+void Car::display_car_details()
+{
+    cout<<"---Car Details--- "<<endl;
+    cout<<"Car Model:"<<car_model<<" "<<endl;
+    cout<<"Car Name :"<<" "<<car_name<<endl;
+    cout<<"Car Color:"<<" "<<car_color<<endl;
+    cout<<"Car MFGYR:"<<" "<<car_mfg<<endl;
+    cout<<"----Thank You...!!----"<<endl;
+    
+}
+int main()
+{
+    Car car1;
+    car1.input_car_details();
+    car1.display_car_details();
+    
+    
+    
+    return 0;
+}
+
+
+
+
