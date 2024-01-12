@@ -1,0 +1,38 @@
+#include<iostream>
+using namespace std;
+class Base; //forward decl
+class Height
+{
+    int num1;
+public:
+    void setvalue(int x)
+    {
+        num1=x;;
+    }
+    friend void operation(Base,Height);
+    
+};
+class Base{
+    int num2;
+public:
+    void getvalue(int y)
+    {
+        num2=y;
+    }
+    friend void operation(Base,Height);
+    
+};
+void operation(Base b,Height h)
+{
+    cout<<"Addition="<<b.num2+h.num1<<endl;
+}
+int main()
+{
+    Base base_obj;
+    Height height_obj;
+    
+    base_obj.getvalue(222);
+    height_obj.setvalue(123);
+    operation(base_obj, height_obj);
+    
+}
