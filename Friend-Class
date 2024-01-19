@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class University;
+class Student
+{
+private:
+    int stud_roll=22;
+    int stud_marks=99.99;
+protected:
+    string stud_name="Krishna";
+    friend class University;
+
+    
+};
+class University
+{
+public:
+    void get_details(Student& stud )
+    {
+        cout<<stud.stud_roll<<endl;
+        cout<<stud.stud_name<<endl;
+        cout<<stud.stud_marks<<endl;
+    }
+};
+int main()
+{
+    University uni_obj;
+    Student stud_obj;
+    uni_obj.get_details(stud_obj);
+    return 0;
+}
