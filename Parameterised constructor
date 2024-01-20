@@ -1,0 +1,25 @@
+#include<iostream>
+using namespace std;
+class Dept
+{
+    int dept_id;
+    string dept_name;
+public:
+    Dept(int,string);
+    void display();
+};
+  Dept:: Dept(int dummy_id,string dummuy_name)
+    {
+        dept_id=dummy_id;
+        dept_name=dummuy_name;
+        
+    }
+ void Dept::display()
+    {
+        cout<<dept_id<<"\t"<<dept_name<<endl;
+    }
+int main()
+{
+    Dept d(22,"Computer Science");
+    d.display();
+}
