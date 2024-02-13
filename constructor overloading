@@ -1,0 +1,68 @@
+//constructor overloading with student class
+ #include <iostream>
+ #include <string>
+ using namespace std;
+ 
+ class Student {
+ private:
+ string name;
+ int age;
+ string course;
+ 
+ public:
+ // Default constructor
+ Student() {
+ name = "Not Set";
+ age = 0;
+ course = "Not Set";
+ }
+ 
+ // Constructor with name and age
+ Student(string n, int a) {
+ name = n;
+ age = a;
+ course = "Not Set";
+ }
+ 
+ // Constructor with name, age, and course
+ Student(string n, int a, string c) {
+ name = n;
+ age = a;
+ course = c;
+ }
+ 
+ // Getter methods
+ string getName() {
+ return name;
+ }
+ 
+ int getAge() {
+ return age;
+ }
+ 
+ string getCourse() {
+ return course;
+ }
+ // Display student details
+ void displayStudentDetails() {
+ cout << "Name: " << name <<endl;
+ cout << "Age: " << age << endl;
+ cout << "Course: " << course <<endl;
+ }
+ };
+ 
+ int main() {
+ // Create a student object using the default constructor
+ Student student1;
+ student1.displayStudentDetails();
+ 
+ // Create a student object using the constructor with name and age
+ Student student2("Nikhil Sharma", 20);
+ student2.displayStudentDetails();
+ 
+ // Create a student object using the constructor with name, age, and course
+ Student student3("Ankit Rawal", 22, "Computer Science");
+ student3.displayStudentDetails();
+ 
+ return 0;
+ }
