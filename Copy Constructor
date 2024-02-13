@@ -26,3 +26,16 @@ class Car {
       return length * height;
     }
 };
+int main() {
+  // create an object of Car1 class
+  Car car1(10.5, 8.6);
+
+  // copy contents of car1 to car2
+  Car car2 = car1;
+
+  // print areas of car1 and car2
+  cout << "Area of Car 1: " << car1.calculateArea() << endl;
+  cout << "Area of Car 2: " << car2.calculateArea();
+
+  return 0;
+}
