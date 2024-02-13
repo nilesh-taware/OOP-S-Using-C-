@@ -1,0 +1,37 @@
+#include<iostream>
+ using namespace std;
+ class Employee
+ {
+ int id;
+ string name;
+ double salary;
+ public:
+ void input_details()
+ {
+ cout<<"Enter id:";
+ cin>>id;
+ cout<<"Enter name:";
+ cin>>name;
+ cout<<"Enter salary:";
+ cin>>salary;
+ }
+ void display()
+ {
+ cout<<id<<"\t"<<name<<"\t"<<salary<<endl;
+ 
+ }
+ 
+ };
+ int main()
+ {
+ Employee e[2];
+ cout<<"Enter employee details:"<<endl;
+ for (int i=0; i<2; i++) {
+ e[i].input_details();
+ }
+ cout<<"Employee Details:"<<endl;
+ for (int i=0; i<2; i++) {
+ e[i].display();
+ }
+ return 0;
+ }
