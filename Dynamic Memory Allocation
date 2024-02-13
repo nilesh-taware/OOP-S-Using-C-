@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+class Person {
+private:
+    string person_name;
+    int person_age;
+public:
+    Person(const string& name, int age)
+    {
+        person_name=name;
+        person_age=age;
+    }
+
+    void displayInfo() const {
+        cout << "Name: " << person_name;
+        cout<<" "<<"Age:"<<person_age <<endl;
+    }
+
+
+};
+
+int main() {
+    Person* person = new Person("Rohit", 21);
+    person->displayInfo();
+
+    // Don't forget to deallocate the memory using the delete operator
+    delete person;
+    //try to access data related to function after delete
+    person->displayInfo();
+    
+    return 0;
+}
