@@ -1,0 +1,31 @@
+
+#include <iostream>
+#include <cstring>
+using namespace std;
+
+class Employee {
+private:
+    int id;
+    char* name;
+
+public:
+    Employee(int id, const char* name) {
+        this->id = id;
+        this->name = new char[strlen(name) ];
+        strcpy(this->name, name);
+    }
+
+   
+
+    void print() {
+        cout << "ID: " << id << ", Name: " << name << "\n";
+    }
+};
+
+int main() {
+    Employee* e = new Employee(1, "Nilesh Taware");
+    e->print();
+    
+    e->print();
+    return 0;
+}
