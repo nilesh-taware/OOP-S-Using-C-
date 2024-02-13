@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+
+// declare a class
+class Car {
+  private:
+    double length;
+    double height;
+
+  public:
+
+    // initialize variables with parameterized constructor
+    Car(double len, double hgt) {
+      length = len;
+      height = hgt;
+    }
+
+    // copy constructor with a car object as parameter
+    // copies data of the obj parameter
+    Car(Car &obj) {
+      length = obj.length;
+      height = obj.height;
+    }
+
+    double calculateArea() {
+      return length * height;
+    }
+};
