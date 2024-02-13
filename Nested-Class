@@ -1,0 +1,61 @@
+#include <iostream>
+using namespace std;
+class University//enclosing class
+{
+protected:
+    int id;
+    string name;
+    int rno;
+    string fname;
+public:
+    class Faculty
+    {
+        
+    public:
+        void input_details(University *uni)
+        {
+            cout<<"Enter name:";
+            cin>>uni->fname;
+            cout<<"Enter Id";
+            cin>>uni->id;
+            
+        }
+        void display_details(University *uni)
+        {
+            cout<<uni->id<<"\t"<<uni->name;
+        }
+        };
+    class Student
+    {
+        
+        
+    public:
+        void input(University *uni)
+        {
+            cout<<"Enter Roll:";
+            cin>>uni->rno;
+            cout<<"Enter Name:";
+            cin>>uni->name;
+        }
+        void display(University *uni)
+        {
+            cout<<uni->rno<<"\t"<<uni->name;
+        }
+        
+    };
+    
+};
+
+int main()
+{
+    University::Faculty fact;
+    University::Student stud;
+    University uniobj;
+    
+    fact.input_details(&uniobj);
+    fact.display_details(&uniobj);
+    
+    stud.input(&uniobj);
+    stud.display(&uniobj);
+    
+}
