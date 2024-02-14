@@ -1,0 +1,31 @@
+//Program for returning object from function in c++
+#include <iostream>
+using namespace std;
+class Student {
+   public:
+    int studId;
+    int studAge;
+    string studName;
+
+    // In this function we returning the student object from input function
+    Student input(int tempstudId, int tempstudAge, string tempstudName) {
+        Student obj;
+        obj.studId = tempstudId;
+        obj.studAge = tempstudAge;
+        obj.studName = tempstudName;
+        return obj;
+    }
+    // In this function we pass object as an argument to display function
+    void display(Student obj) {
+
+       cout << "Student Name: = " << obj.studName << endl;
+       cout << "Student Id  : = " << obj.studId << endl;
+       cout << "Student Age : = " << obj.studAge << endl;
+    }
+};
+int main() {
+    Student studobj;
+    studobj = studobj.input (1212, 21, "Nilesh");
+    studobj.display(studobj);
+    return 0;
+}
