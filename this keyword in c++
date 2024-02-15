@@ -1,0 +1,59 @@
+#include <iostream>
+using namespace std;
+
+class Student {
+   private:
+      string name;
+      int id;
+      string collegeName;
+
+   public:
+    Student(string n, int i, string c)
+    {
+        name=n;
+        id=i;
+        collegeName=c;
+    }
+
+      void display() {
+          cout << "Name: " << this->name << ", ID: " << this->id << ", College: " << this->collegeName << endl;
+      }
+
+      void changeCollege(string newCollege) {
+         this->collegeName = newCollege;
+      }
+
+      string getCollegeName() {
+         return this->collegeName;
+      }
+
+      int getID() {
+         return this->id;
+      }
+
+      string getName() {
+         return this->name;
+      }
+};
+
+/// Main function with object and methods belongs to class
+int main() {
+    
+   Student s1("Shreyas", 32456, "JG College");
+   Student s2("Nilesh", 1232, "Mumbai University");
+
+   s1.display();
+   s2.display();
+
+   s1.changeCollege("DEF Institute");
+
+   cout <<"After changing college name for student 1:\n";
+
+   s1.display();
+
+   cout << "Student 1 college name: " << s1.getCollegeName() << endl;
+   cout << "Student 1 ID: " << s1.getID() << endl;
+   cout << "Student 1 name: " << s1.getName() << endl;
+
+   return 0;
+}
