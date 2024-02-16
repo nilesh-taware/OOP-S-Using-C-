@@ -1,0 +1,41 @@
+#include<iostream>
+using namespace std;
+class A
+{
+    int x=20;
+    
+public:
+    A change(A obja)
+    {
+        
+        x=30;
+        return obja;
+    }
+    void disp()
+    {
+        cout<<this->x<<endl;
+    }
+    class B{
+        int x=1;
+    public:
+        void input()
+        {
+            this->x++;
+        }
+        void display()
+        {
+            cout<<this->x<<endl;
+        }
+    };
+    
+};
+int main()
+{
+    A obja;
+    A::B objb;
+    obja.disp();
+    obja.change(obja);
+    objb.display();
+    obja.disp();
+    
+}
