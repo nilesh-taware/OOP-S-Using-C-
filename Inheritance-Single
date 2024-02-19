@@ -1,0 +1,31 @@
+//single Inheritance Example
+#include<iostream>
+using namespace std;
+class Account//This is base class
+{
+public:
+    void display()
+    {
+        float salary=10000;
+        cout<<"Salary:"<<salary<<endl;
+    }
+};
+class Faculty:public Account
+{//Faculty is Derived class
+public:
+    void display()
+    {
+        float bonous=2000;
+        cout<<"Bonous:"<<bonous<<endl;
+    }
+    
+    
+};
+int main()
+{
+    Faculty fobj;
+    cout<<"Salary Details:"<<endl;
+    fobj.display();
+    fobj.Faculty::display();
+    
+}
