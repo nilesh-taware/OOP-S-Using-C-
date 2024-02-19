@@ -1,0 +1,43 @@
+//Multiple Inheritance using two base classess and 1 derived class
+#include<iostream>
+using namespace std;
+class Account
+{
+    int acc_no=1111;
+public:
+    void acc_details()
+    {
+        cout<<"Account"<<acc_no<<endl;
+    }
+    
+    
+};
+
+class Bank{
+public:
+    void bank_details()
+    {
+        cout<<"Bank Name:HDFC BANK PUNE"<<endl;
+        cout<<"Street Address:FC Road Pune"<<endl;
+    }
+        
+};
+class Faculty:public Account,public Bank
+{
+    int sal=1000;
+public:
+    void salary()
+    {
+        cout<<"Salary:"<<sal<<endl;
+    }
+};
+    
+int main()
+{
+    Faculty factObj;
+    factObj.acc_details();
+    factObj.salary();
+    factObj.bank_details();
+    
+    return 0;
+}
