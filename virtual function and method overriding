@@ -1,0 +1,39 @@
+#include<iostream>
+using namespace std;
+
+// Base class
+class Animal {
+public:
+    virtual void sound() {
+        cout << "The animal makes a sound" << endl;
+    }
+};
+
+// Derived class
+class Dog : public Animal {
+public:
+    void sound() override {
+        cout << "The dog barks" << endl;
+    }
+};
+
+// Derived class
+class Cat : public Animal {
+public:
+    void sound() override {
+        cout << "The cat meows" << endl;
+    }
+};
+
+int main() {
+    Animal* animal1 = new Dog();
+    Animal* animal2 = new Cat();
+
+    animal1->sound(); // Outputs: The dog barks
+    animal2->sound(); // Outputs: The cat meows
+
+    delete animal1;
+    delete animal2;
+
+    return 0;
+}
