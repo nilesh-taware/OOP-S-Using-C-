@@ -1,0 +1,39 @@
+#include <iostream>
+ using namespace std;
+ class Base {
+ private:
+ double x, y;
+ 
+ public:
+ Base(double dx, double dy)
+ {
+ x=dx;
+ y=dy;
+ }
+ 
+ double getX()
+ {
+ return x;
+ }
+ double getY()
+ {
+ return y;
+ }
+ 
+ // Overload the + operator using a friend function
+ friend Base operator+(Base& v1,Base& v2) {
+ return Base(v1.x + v2.x, v1.y + v2.y);
+ }
+ };
+ 
+ int main() {
+ Base v1{ 3.0, 4.0 };
+ Base v2{ 1.0, 2.0 };
+ Base v3 = v1 + v2;
+ 
+ cout << "v1: (" << v1.getX() << ", " << v1.getY() << ")\n";
+ cout << "v2: (" << v2.getX() << ", " << v2.getY() << ")\n";
+ cout << "v3: (" << v3.getX() << ", " << v3.getY() << ")\n";
+ 
+ return 0;
+ }
