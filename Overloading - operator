@@ -1,0 +1,50 @@
+// operator_overloading
+#include <iostream>
+
+using namespace std;
+
+class Base {
+
+int val;
+
+public:
+
+void get_Data() {
+
+cout << "Enter a value : ";
+
+cin >> val;
+
+}
+
+void print_Data() {
+
+cout << val << endl;
+
+}
+
+void operator -() {
+
+val = -val;
+
+}
+
+};
+
+int main() {
+
+Base testobject;
+
+testobject.get_Data();
+
+cout << "Before change the value is : ";
+
+testobject.print_Data();
+
+-testobject; // It will call like testobject.operator -();
+
+cout << "After change the value is : ";
+
+testobject.print_Data();
+
+}
