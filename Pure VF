@@ -1,0 +1,78 @@
+//pure virtual function and abstract class
+#include <iostream>
+using namespace std;
+// Abstract class
+class Shape
+{
+public:
+    virtual float calculateArea()=0; // pure virtual function.
+};
+class Square : public Shape
+{
+float a;
+public:
+Square(float length)
+{
+a = length;
+}
+float calculateArea()
+{
+return a*a;
+}
+};
+class Circle : public Shape
+{
+float radious;
+public:
+
+Circle(float x)
+{
+radious = x;
+}
+float calculateArea()
+{
+return 3.14*radious*radious ;
+}
+};
+class Rectangle : public Shape
+{
+float l;
+float b;
+public:
+Rectangle(float x,float y)
+{
+l=x;
+b=y;
+}
+float calculateArea()
+{
+return l*b;
+}
+};
+int main()
+{
+
+Shape *shape;
+
+Square sqrobj(3.4);
+Rectangle rectobj(5,6);
+Circle circleobj(7.8);
+
+shape =&sqrobj;
+
+int area1 =shape->calculateArea();
+shape =&rectobj;
+
+int area2 =shape->calculateArea();
+shape =&circleobj;
+
+int area3=shape->calculateArea();
+
+cout <<"Area of the square is "<<area1<< endl;
+cout <<"Area of the rectangle is " <<area2<<endl;
+cout << "Area of the circle is " <<area3<<endl;
+
+return 0;
+}
+
+
