@@ -1,0 +1,30 @@
+//class to class conversion
+#include<iostream>
+using namespace std;
+class student {
+   public:
+      int rollno;
+    student(int stud) {
+         rollno = stud;
+      }
+};
+
+class university {
+   public:
+      int data;
+      university(student &tempvar) {
+         data = tempvar.rollno;
+      }
+    void display()
+    {
+        cout<<"University Data:"<<data;
+    }
+};
+
+int main() {
+   student obj_student(10);
+   university
+    obj_university = obj_student;
+    obj_university.display();
+   return 0;
+}
