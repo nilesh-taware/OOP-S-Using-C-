@@ -1,0 +1,40 @@
+//class to basic conversion
+#include<iostream>
+using namespace std;
+class Time {
+    int hrs, min;
+
+public:
+    Time(int, int);
+    operator int();
+    int getHrs();
+    int getMins();
+};
+
+Time::Time(int t1, int t2) {
+    hrs = t1;
+    min = t2;
+}
+
+Time::operator int() {
+    return hrs * 60 + min;
+}
+
+int Time::getHrs() {
+    return hrs;
+}
+int Time::getMins()
+{
+    return min;
+}
+
+int main() {
+    Time t(3, 40);
+    int duration;
+    duration = t;
+    cout << "Hour: " << t.getHrs() << endl;
+    cout << "Minute: " << t.getMins() << endl;
+    cout << "Total Minutes: " << duration << endl;
+
+    return 0;
+}
