@@ -1,0 +1,37 @@
+//template function overloading
+#include <iostream>
+using namespace std;
+// Function template for adding two integers
+template <typename T>
+T add(T a, T b) {
+    return a + b;
+}
+
+// Overloaded function template for adding two doubles
+template <>
+double add<double>(double a, double b) {
+    return a + b;
+}
+
+// Overloaded function template for adding two strings
+template <>
+string add<string>(string a,string b) {
+    return a + b;
+}
+
+int main() {
+    // Using the integer version of the add function
+    int intResult = add<int>(5, 3);
+    cout << "Integer addition: " << intResult <<endl;
+
+    // Using the double version of the add function
+    double doubleResult = add<double>(5.5, 3.3);
+    std::cout << "Double addition: " << doubleResult <<endl;
+
+    // Using the string version of the add function
+    string stringResult = add<string>("Hello, ", "World!");
+    std::cout << "String concatenation: " << stringResult <<endl;
+
+    return 0;
+}
+
