@@ -1,0 +1,42 @@
+//template class example
+#include <iostream>
+using namespace std;
+
+template <typename T>
+class MyClass {
+private:
+    T data; // Data member of type T
+
+public:
+    // Constructor that takes a value of type T
+    MyClass(T value) : data(value) {}
+
+    // Method to set the value of data
+    void setData(T value) {
+        data = value;
+    }
+
+    // Method to get the value of data
+    T getData() const {
+        return data;
+    }
+
+    // Method to print the value of data
+    void printData() const {
+        cout << "Data: " << data <<endl;
+    }
+};
+
+int main() {
+    
+    MyClass intInstance(10);
+    intInstance.printData();
+    
+    MyClass doubleInstance(20.5);
+    doubleInstance.printData();
+    MyClass stringInstance("Hello, World!");
+    stringInstance.printData();
+
+    return 0;
+}
+
