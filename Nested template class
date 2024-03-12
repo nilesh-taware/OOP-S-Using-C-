@@ -1,0 +1,51 @@
+//nested template classes
+ #include <iostream>
+
+// Define an outer class template named 'OuterClass'
+ template <typename T>
+ class OuterClass {
+ private:
+     T outerData; // Data member of type T
+
+ public:
+     // Constructor for OuterClass
+     OuterClass(T value) : outerData(value) {}
+
+     // Nested class template inside OuterClass
+     template <typename U>
+     class InnerClass {
+     private:
+         U innerData; // Data member of type U
+
+     public:
+         // Constructor for InnerClass
+         InnerClass(U value) : innerData(value) {}
+
+         // Method to set the value of innerData
+         void setInnerData(U value) {
+             innerData = value;
+         }
+
+         // Method to get the value of innerData
+         U getInnerData() const {
+             return innerData;
+         }
+
+         // Method to print the value of innerData
+         void printInnerData() const {
+             std::cout << "Inner Data: " << innerData << std::endl;
+         }
+     };
+ };
+
+ int main() {
+     // Create an instance of OuterClass with int type
+     OuterClass<int>::InnerClass<double> nestedInstance(30.5);
+     nestedInstance.printInnerData(); // Output: Inner Data: 30.5
+
+     return 0;
+ }
+
+
+ 
+
