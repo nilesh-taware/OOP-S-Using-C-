@@ -1,0 +1,61 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+using namespace std;
+// Function to create a file and write to it
+void createAndWriteFile(const string& filename, const string& content) {
+    ofstream file(filename);
+    if (file.is_open()) {
+        file << content;
+        file.close();
+        cout << "File created and written successfully.\n";
+    } else {
+        cout << "Unable to open file for writing.\n";
+    }
+}
+
+// Function to read from a file
+void readFile(const string& filename) {
+    ifstream file(filename);
+    string line;
+    if (file.is_open()) {
+        while (getline(file, line))//getline
+        {
+            cout << line << '\n';
+        }
+        file.close();
+    } else {
+        cout << "Unable to open file for reading.\n";
+    }
+}
+
+// Function to append to a file
+void appendToFile(const string& filename, const std::string& content) {
+    std::ofstream file(filename, std::ios::app);
+    if (file.is_open()) {
+        file << content;
+        file.close();
+        std::cout << "Content appended successfully.\n";
+    } else {
+        std::cout << "Unable to open file for appending.\n";
+    }
+}
+
+int main() {
+    std::string filename = "example.txt";
+    std::string content = "Hello, World!";
+
+    // Create and write to a file
+    createAndWriteFile(filename, content);
+
+    // Read from the file
+    readFile(filename);
+
+    // Append to the file
+    appendToFile(filename, "\nThis is an appended line.");
+
+    // Read from the file again to see the appended content
+    readFile(filename);
+
+    return 0;
+}
