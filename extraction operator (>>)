@@ -1,0 +1,30 @@
+//the extraction operator (>>) is used to read formatted input from the standard input stream (std::cin).
+#include <iostream>
+#include <string>
+using namespace std;
+int main() {
+    int integer;
+    float floatingPoint;
+    char character;
+    string text;
+
+    cout << "Enter an integer: ";
+    cin >> integer; // Reads an integer
+    cout << "You entered: " << integer <<endl;
+
+    cout << "Enter a floating-point number: ";
+    cin >> floatingPoint; // Reads a floating-point number
+    cout << "You entered: "<< floatingPoint <<endl;
+
+    cout << "Enter a character: ";
+    cin >> character; // Reads a character
+    cout << "You entered: "<< character <<endl;
+
+    cout << "Enter a string: ";
+    cin.ignore(); // Ignores the newline character left in the input buffer
+    getline(cin, text); // Reads a line of text
+    cout << "You entered: " << text <<endl;
+
+    return 0;
+}
+
